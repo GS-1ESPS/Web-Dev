@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(primary);
+}
+
+
+/*navbar*/
+
+@layer components {
+
+  .navbar {
+    @apply flex py-6 justify-between items-center bg-offWhite w-screen fixed top-0 left-0 z-50;
+  }
+
+  .navbar-logo {
+    @apply w-[124px] h-[32px];
+  }
+
+  .navbar-links {
+    @apply list-none sm:flex hidden justify-end items-center flex-1 mx-14;
+  }
+
+  .navbar-buttons{
+    @apply list-none sm:flex hidden justify-end items-center gap-2;
+  }
+
+  .navbar-link {
+    @apply font-poppins font-normal cursor-pointer text-[16px] text-textDark;
+  }
+
+  li{
+    @apply text-textDark
+  }
+
+  .active-link {
+    @apply text-primary;
+  }
+
+  .inactive-link {
+    @apply text-textDark;
+  }
+
+  .navbar-toggle-container {
+    @apply sm:hidden flex flex-1 justify-end items-center;
+  }
+
+  .navbar-toggle-icon {
+    @apply w-[28px] h-[28px] object-contain cursor-pointer;
+  }
+
+  .navbar-mobile-menu {
+    @apply p-6 bg-offWhite shadow-lg fixed top-20 right-4 min-w-[160px] rounded-xl z-50 flex flex-col gap-4;
+  }
+
+  .navbar-mobile-links {
+    @apply list-none flex justify-end items-start flex-1 flex-col;
+  }
+
+  .navbar-link-mobile {
+    @apply font-poppins font-medium cursor-pointer text-[16px];
+  }
+
+  .btn-navbar{
+    @apply bg-textDark text-offWhite p-3 rounded-xl ;
+  }
+
+  .btn-navbar-mobile{
+    @apply bg-textDark text-offWhite p-3 rounded-xl mt-4;
+  }
+}
+
+/*hero*/
+
+@layer components {
+  .home-section {
+    @apply flex md:flex-row flex-col py-16 mt-14 bg-bgLight;
+  }
+
+  .home-text-area {
+    @apply flex-1 flex flex-col justify-start xl:px-0 sm:px-16 px-6;
+  }
+
+  .home-header-row {
+    @apply flex flex-row justify-between items-center w-full;
+  }
+
+  .home-heading {
+    @apply font-poppins text-2xl md:text-4xl font-semibold text-textDark w-full;
+  }
+
+  .home-paragraph {
+    @apply font-poppins font-normal text-sm text-textDark text-[18px] leading-[30.8px] max-w-[470px] md:text-xl mt-5;
+  }
+
+  .home-get-started-desktop {
+    @apply ss:flex hidden md:mr-4 mr-0;
+  }
+
+  .home-get-started-mobile {
+    @apply ss:hidden flex justify-center items-center mt-10;
+  }
+
+  .home-image-area {
+    @apply flex-1 flex justify-center items-center md:my-0 my-10 relative;
+  }
+
+  .home-image {
+    @apply w-full h-full relative z-[5];
+  }
+}
+
+/*learning section*/
+@layer components {
+  .learning-section {
+    @apply flex md:flex-row flex-col-reverse sm:py-16;
+  }
+
+  .learning-image-wrapper {
+    @apply flex-1 flex justify-center items-center md:mr-10 mr-0 md:mt-0 mt-10 relative;
+  }
+
+  .learning-image {
+    @apply w-full h-full rounded-xl relative z-[5];
+  }
+
+
+  .learning-text {
+    @apply flex-1 flex justify-center flex-col;
+  }
+
+  .learning-title {
+    @apply font-poppins font-semibold text-textDark text-[48px] leading-[76.8px] w-full;
+  }
+
+  .learning-description {
+    @apply font-poppins font-normal text-textDark text-[18px] leading-[30.8px] max-w-[470px] mt-5;
+  }
+
+  .store-buttons {
+    @apply flex flex-row flex-wrap sm:mt-10 mt-6;
+  }
+
+  .store-button {
+    @apply object-contain w-[130px] h-[43px] cursor-pointer;
+  }
+}
+
+/*about section*/
+
+@layer components {
+  .about-section {
+    @apply flex md:flex-row flex-col sm:py-16 py-6;
+  }
+
+  .about-text {
+    @apply flex-1 flex justify-center flex-col px-6 py-8 md:py-0;
+  }
+
+  .about-heading {
+    @apply font-poppins font-semibold text-textDark text-[36px] leading-[76.8px] w-full;
+  }
+
+  .about-paragraph {
+    @apply font-poppins font-normal text-textDark text-[18px] leading-[30.8px] max-w-[470px] mt-5;
+  }
+
+  .about-features {
+    @apply flex-1 flex flex-col px-6 md:items-center justify-center;
+  }
+
+  .feature-card {
+    @apply flex flex-row p-6 rounded-[20px] bg-[#1f2937];
+  }
+
+  .feature-card-spacing {
+    @apply mb-6;
+  }
+
+  .feature-icon {
+    @apply w-[64px] h-[64px] rounded-full bg-primary flex justify-center items-center;
+  }
+
+  .icon-image {
+    @apply w-[50%] h-[50%] object-contain;
+  }
+
+  .feature-text {
+    @apply flex-1 flex flex-col ml-3;
+  }
+
+  .feature-title {
+    @apply font-poppins font-semibold text-white text-[18px] leading-[23.4px] mb-1;
+  }
+
+  .feature-content {
+    @apply font-poppins font-normal text-white text-[16px] leading-[24px];
+  }
+}
+
+/*button*/
+@layer components {
+  .btn-primary {
+    @apply py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-bgLight rounded-[10px] outline-none;
+  }
+}
+
+
+/*clients section*/
+
+@layer components {
+  .clients-section {
+    @apply flex justify-center items-center my-4;
+  }
+
+  .clients-container {
+    @apply flex justify-center items-center flex-wrap w-full;
+  }
+
+  .client-card {
+    @apply flex-1 flex justify-center items-center min-w-[100px] m-5;
+  }
+
+  .client-logo {
+    @apply w-[60px] md:w-[80px] object-contain;
+  }
+}
+
+/*cta*/
+@layer components {
+  .cta-section {
+    @apply flex justify-center items-center my-16 py-14 px-14 sm:flex-row flex-col bg-primary rounded-[20px] box-shadow;
+  }
+
+  .cta-text {
+    @apply flex-1 flex flex-col;
+  }
+
+  .cta-heading {
+    @apply font-poppins font-semibold text-white text-[48px] leading-[76.8px] w-full;
+  }
+
+  .cta-paragraph {
+    @apply font-poppins font-normal text-white text-[18px] leading-[30.8px] max-w-[470px] mt-5;
+  }
+
+  .cta-button-wrapper {
+    @apply flex justify-center items-center sm:ml-10 ml-0 sm:mt-0 mt-10;
+  }
+}
+
+
+/*footer*/
+
+@layer components {
+  .footer-section {
+    @apply flex justify-center items-center flex-col py-6 bg-offWhite;
+  }
+
+  .footer-main {
+    @apply flex justify-start items-start md:flex-row flex-col mb-8 w-full px-4;
+  }
+
+  .footer-logo-text {
+    @apply flex-1 flex flex-col justify-start;
+  }
+
+  .footer-logo {
+    @apply w-[266px] h-[72.14px] object-contain;
+  }
+
+  .footer-description {
+    @apply font-poppins font-normal text-textDark text-[16px] leading-[24px] mt-4 max-w-[312px];
+  }
+
+  .footer-links-wrapper {
+    @apply flex-[1.5] w-full flex flex-row justify-between gap-4 flex-wrap md:mt-0 mt-10;
+  }
+
+  .footer-link-group {
+    @apply flex flex-col ss:my-0 my-4 min-w-[150px];
+  }
+
+  .footer-link-title {
+    @apply font-poppins font-medium text-[18px] leading-[27px] text-textDark;
+  }
+
+  .footer-list {
+    @apply list-none mt-4;
+  }
+
+  .footer-list-item {
+    @apply font-poppins font-normal text-[16px] leading-[24px] text-textDark hover:text-textDark cursor-pointer;
+  }
+
+  .footer-list-spacing {
+    @apply mb-4;
+  }
+
+  .footer-bottom {
+    @apply w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t border-t-[#3F3E45] px-6;
+  }
+
+  .footer-copyright {
+    @apply font-poppins font-normal text-center text-[18px] leading-[27px] text-textDark;
+  }
+
+  .footer-terms {
+    @apply flex flex-row md:mt-0 mt-6;
+  }
+
+  .footer-social-icon {
+    @apply w-[21px] h-[21px] object-contain cursor-pointer;
+  }
+}
+
+
+/*bigNumbers*/
+@layer components {
+  .bigNumbers-section {
+    @apply flex justify-center items-stretch flex-row flex-wrap mb-10 md:mb-0 my-16;
+  }
+
+  .bigNumbers-card {
+    @apply flex-1 flex justify-start items-center flex-col mr-3 bg-primary rounded-[20px] p-6 box-shadow mb-4 text-center;
+  }
+
+  .bigNumbers-value {
+    @apply font-poppins font-semibold xs:text-[40.89px] text-[30.89px] xs:leading-[53.16px] leading-[43.16px] text-white;
+  }
+
+  .bigNumbers-title {
+    @apply font-poppins font-normal uppercase text-textDark xs:text-[20.45px] text-[15.45px] xs:leading-[26.58px] leading-[21.58px] ml-3;
+  }
+}
